@@ -1,68 +1,63 @@
 /* Add a black background color to the top navigation */
 body {
-    width: 600px;
-    margin: 0 auto;
-    background-color: #fcfcfc;
-    padding: 0 0 1000px 0px;
+    width: 80%;
+    height: 100%;
+    margin: 10px auto 30px auto;
+    background-image: url("background.jpg");
+    padding: 0 0 auto 0;
     border: 5px solid rgb(22, 1, 1);
 }
+/* styyle for h1 heading*/
+h1{
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-style: normal;
+  text-align: center;
+}
+/* styyle for h2 heading*/
+h2{
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  margin-left: 5px;
+}
+/* style for p paragraphs*/
+p {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  text-indent: 1.5em;
+  margin-left: 5px;
+  margin-right: 5px;
+  text-align: justify
+}
 
-
-
-
-.menuBar {
-    background-color: rgb(177, 47, 47);
-    overflow: hidden;
-    float: center;
-  }
+/* style for block with text*/
+.textSurface{
+  padding: 20px 20px 20px 20px;
+  background-color: rgb(255, 255, 255);
+  border-top: 0;
+  margin-top: 0;
+}
+.menuBar{
+  height: auto;
+  padding: auto;
+  background-color: white;
+  margin: auto;
+}
+.menuBar ul {
+  float: left;
+  list-style: none;
+  display: inline;
+ }
   
-  /* Style the links inside the navigation bar */
-  .menuBar position {
-    float: left;
-    display: block;
-    color: #f2f2f2;
-    text-align: center;
-    padding: 20px 20px;
-    text-decoration: none;
-    font-size: 17px;
-  }
-  
-  /* Change the color of links on hover */
-  .menuBar position:hover {
-    background-color: rgb(39, 33, 213);
-    color: black;
-  }
-  
-  /* Add an active class to highlight the current page */
-  .menuBar position.active {
-    background-color: #4CAF50;
-    color: white;
-  }
-  
-  /* Hide the link that should open and close the topnav on small screens */
-  .menuBar .icon {
-    display: none;
-  }
-  /* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) */
-@media screen and (max-width: 600px) {
-    .menuBar position:not(:first-child) {display: none;}
-    .menuBar position.icon {
-      float: right;
-      display: block;
-    }
-  }
-  
-  /* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens (display the links vertically instead of horizontally) */
-@media screen and (max-width: 600px) {
-    .menuBar.responsive {position: relative;}
-    .menuBar.responsive position.icon {
-      position: absolute;
-      right: 0;
-      top: 0;
-    }
-    .menuBar.responsive position {
-      float: none;
-      display: block;
-      text-align: left;
-    }
-  }
+ .menuBar li {
+  color: black;
+  font-family: Arial, Helvetica, sans-serif;
+  text-decoration: none;
+  float: center;
+  font-size: 15px;
+  padding: 12px;
+  display: inline;
+ }
+ .menuBar a{
+   color : unset;
+ }
+ .menuBar a:hover {
+  color: #7eb9be;
+ }
