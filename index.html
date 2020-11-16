@@ -3,6 +3,11 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="author" content="Łukasz Popek">
+    <meta nama="description" content="This is main page of WUTFilmApp,
+    project creted for subject Programowanie Aplikacyjne on WUT">
+    <link rel="shortcut icon" href="favico.ico" type="image/x-icon">
+    <style>a { text-decoration: none; }</style>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- here we can include our CSS files -->
     <link rel="stylesheet" href="style.css">
@@ -10,18 +15,33 @@
 </head>
 
 <body>
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-    <div class="menuBar" id="menuBar">
-        <position href="#WUTfilmapp" >WUTFilmApp</position>
-        <position href="#news">News</position>
-        <position href="#contact">Kontakt</position>
-        <position href="#film base">Filmy</position>
-        <position href="#about">Logowanie</position>
-        <position href="javascript:void(0);" class="icon" onclick="myFunction()">
-            <i class="fa fa-bars"></i>
-        </position>
+    <div class="menuBar">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="baza_filmowa.html">Wyszukiwarka filmów</a></li>
+            <li><a href="premiery.html">Zbliżające się premiery</a></li>
+            <li><a href="news.html">Wiadomości</a></li>
+            <li><a href="login.html">Zaloguj się</a></li>
+        </ul>
     </div>
+    
+    <div class="textSurface" id="textSurface">
+        <h1>Witaj w WUTFilmApp!</h1>
+        <p>Aplikacja stworzona została dla wszystkich fanów kinematografii. Użytkownik może być na
+        na bierząco z informcjami o świecie filmu, najowszymi premierami, jak również zajdować inspiracje 
+        do dalszego poznawania filmów. Zapraszamy do zabawy!
+        </p>
+        <h2>Jak używać?</h2>
+        <p>
+            W naszej bazie filmowej znajdują się setki filmów opatrzonych recenzjami oraz wskazówkami
+            dla kogo ten film może być interesujący. Po założeniu konta użytkownik może oceniać, budować
+            rankingi filmów. Z naszej strony są przedstawiane sugestie na podstawie zainteresowań jakie 
+            filmy mogłyby się spodobać. Co więcej użytkownik jest na bierząco z wiadomosciami ze świata filmu
+            na dzięki sekcji premiery w której umieszczone są filmy oczekujące na premierę. 
+        </p>
+    </div>  
 </body>
 
 </html>
