@@ -1,9 +1,14 @@
+* {
+  margin : 0;
+  padding : 0;
+}
+
+
 /* Add a black background color to the top navigation */
 body {
-    width: 80%;
-    height: 100%;
+    width: 85%;
     margin: 10px auto 30px auto;
-    background-image: url("background.jpg");
+    background-image: url("./photo/main_background.jpg");
     padding: 0 0 auto 0;
     border: 5px solid rgb(22, 1, 1);
 }
@@ -19,7 +24,7 @@ h2{
   margin-left: 5px;
 }
 /* style for p paragraphs*/
-p {
+p{
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   text-indent: 1.5em;
   margin-left: 5px;
@@ -27,6 +32,18 @@ p {
   text-align: justify
 }
 
+.clear{
+  clear: both;
+}
+#mainHeader{
+  background-color: rgb(74, 46, 103);
+  color: white;
+  padding: 10px 10px 10px 10px;
+}
+#maiHeader h1{
+  padding: 20px auto;
+  margin: 50 auto;
+}
 /* style for block with text*/
 .textSurface{
   padding: 20px 20px 20px 20px;
@@ -34,30 +51,62 @@ p {
   border-top: 0;
   margin-top: 0;
 }
-.menuBar{
+#menuBar{
   height: auto;
-  padding: auto;
-  background-color: white;
+  padding: 10px auto;
   margin: auto;
 }
-.menuBar ul {
-  float: left;
+
+#menuBar ul {
+  color:white;
+  width: 100%;
+  background-color: rgb(80, 7, 93);
+  float: right;
   list-style: none;
   display: inline;
+  padding: 10px;
+  box-sizing: border-box;
  }
   
- .menuBar li {
+ #menuBar li {
   color: black;
+  background-color: purple;
   font-family: Arial, Helvetica, sans-serif;
   text-decoration: none;
-  float: center;
+  float: left;
   font-size: 15px;
-  padding: 12px;
-  display: inline;
+  padding: 10px 12px;
+  border: solid, 3px, black;
+  display: inline-block;
  }
- .menuBar a{
+ #menuBar a{
    color : unset;
  }
- .menuBar a:hover {
-  color: #7eb9be;
+ #menuBar a:hover {
+  color: #f56ed8;
+ }
+ #mainFooter {
+  background: rgb(80, 7, 93);
+  color: white;
+  padding-left: 0px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-top: 20px, solid, black;
+  font-size: 7px;
+ }
+ #mainFooter p{
+   text-align: center;
+ }
+ .conteiner{
+  padding-top: 30px;
+ }
+ .conteiner h2 {
+  padding-top: 20px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  margin-left: 5px;
+ }
+ .conteiner p{
+   padding: 10px, auto;
+   font-family: 'Comic Sans', 'Gill Sans Mt', sans-serif;
+   line-height: 1em;
  }
