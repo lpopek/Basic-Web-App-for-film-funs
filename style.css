@@ -33,6 +33,19 @@ p{
   text-align: justify
 }
 
+
+p#styl1 {
+  color: rgb(100, 32, 117);
+  text-indent: 2em;
+}
+
+p#styl2 {
+  color: rgb(100, 32, 117);
+  text-indent: 2em;
+  text-align: center;
+}
+
+
 .clear{
   clear: both;
 }
@@ -70,12 +83,12 @@ p{
   box-sizing: border-box;
  }
 
-  
+
  #menuBar li {
   color: black;
   background-color: purple;
   border: 3px black solid;
- 
+
   font-family: Arial, Helvetica, sans-serif;
   font-weight: bold;
   text-decoration: none;
@@ -123,7 +136,7 @@ p{
    padding: 60px;
    padding-left: center;
    margin: 17% auto;
-  
+
    font-family: Arial, Helvetica, sans-serif;
    float: center;
    border-radius: 20px;
@@ -177,3 +190,67 @@ p{
   text-indent: 0;
   padding-top: 10px;
 }
+ #searchbar{
+  margin-left: 5%;
+  padding:10px;
+  border-radius: 10px;
+}
+
+input[type=text] {
+   width: 30%;
+   -webkit-transition: width 0.15s ease-in-out;
+   transition: width 0.15s ease-in-out;
+}
+
+/* When the input field gets focus,
+     change its width to 100% */
+input[type=text]:focus {
+  width: 40%;
+}
+
+.main_box {
+  margin-top: 15px;
+}
+.movie_box {
+  border-style: solid;
+  margin-bottom: 20px;
+  background: #fff;
+  padding: 8px;
+  height: 270;
+}
+
+.movie_box div.cover {
+  float: left;
+  background-color: rgb(180, 116, 180);
+  width: 27%;
+  height: 270;
+  text-align: center;
+}
+
+.movie_box div.description  {
+  float: right;
+  background-color: rgb(143, 59, 143);
+  width: 73%;
+  height: 270;
+}
+.movie_box div.description_header {
+  color: rgb(17, 1, 1);
+  background-color: purple;
+  height: 25%;
+  text-align: center;
+  padding-left: 6px;
+}
+.movie_box div.description_body {
+  overflow: hidden;
+  height: 60%;
+  border-left: 1px solid #e5e5e5;
+  border-right: 1px solid #e5e5e5;
+  text-align: center;
+  background: #fff;
+}
+
+.movie_box div.description_bottom {
+  border: 1px solid #d7d7d7;
+  height: 15%;
+}
+
