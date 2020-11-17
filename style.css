@@ -132,6 +132,7 @@ p#styl2 {
  }
 
  .formsStyle {
+   font-size: 15;
    background-color: purple;
    padding: 60px;
    padding-left: center;
@@ -143,6 +144,10 @@ p#styl2 {
    border: 2px black solid;
  }
 
+ .formsStyle input[type="password"]{
+	padding:8px;
+	width:30%;
+}
  .formsStyle input[type="text"]{
 	padding:8px;
 	width:30%;
@@ -157,7 +162,7 @@ p#styl2 {
 }
 .formsStyle select{
 	padding:8px;
-	width:30%;
+	width: 34.1%;
 }
 .formsStyle input[type='number']{
 	padding:8px;
