@@ -119,17 +119,22 @@ p{
  }
 
  .formsStyle {
+   font-size: 15;
    background-color: purple;
    padding: 60px;
    padding-left: center;
    margin: 17% auto;
-  
+
    font-family: Arial, Helvetica, sans-serif;
    float: center;
    border-radius: 20px;
    border: 2px black solid;
  }
 
+ .formsStyle input[type="password"]{
+	padding:8px;
+	width:30%;
+}
  .formsStyle input[type="text"]{
 	padding:8px;
 	width:30%;
@@ -144,7 +149,7 @@ p{
 }
 .formsStyle select{
 	padding:8px;
-	width:30%;
+	width: 34.1%;
 }
 .formsStyle input[type='number']{
 	padding:8px;
