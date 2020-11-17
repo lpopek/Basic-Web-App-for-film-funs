@@ -1,9 +1,58 @@
+
+<!DOCTYPE html>
 <html lang="en"> 
     <head>
-        <meta name = "Author" content = "">
+        <meta charset="UTF-8">
+        <meta name = "Author: Łukasz Popek" content = "">
         <meta name = "Description" content = "It's website for login panel for user">
+        <style>a { text-decoration: none; }</style>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <title>WUTFilmApp</title>
     </head>
     <body>
-        <h1>Strona jeszcze nie istnieje</h1> 
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        
+        <div id = "mainHeader">
+            <h1> 
+                WUTFilmApp
+            </h1>
+        </div>
+       
+        
+        <div id="menuBar">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="baza_filmowa.html">Wyszukiwarka filmów</a></li>
+                    <li><a href="premiery.html">Premiery</a></li>
+                    <li><a href="news.html">Wiadomości</a></li>
+                    <li><a href="login.html">Zaloguj się</a></li>
+                </ul>
+        </div>
+        
+        
+        <div class="textSurface" >
+            <!-- Forms -->
+            <form class="formsStyle">
+                <div>
+                    <label>Login</label>
+                    <input type="text" name="login" placeholder="Wpisz login">
+                </div>
+                <div>
+                    <label>Hasło</label>
+                    <input type="text" name="password" placeholder="Wpisz hasło">
+                </div>
+                <button>Zaloguj się</button>
+                <p>
+                    Nie masz konta? <a href="registration.html">Zarejestruj się!</a>
+                </p>
+            </form>
+		
+        </div>
+        <div id = "mainFooter">
+            <p><cite>WUTFilmApp</cite> created by Łukasz Popek Kinga Kwoka & Olga Krupa</p>
+        </div>
     </body>
+    
+    
 </html>
