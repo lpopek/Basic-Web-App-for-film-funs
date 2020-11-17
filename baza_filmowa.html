@@ -1,4 +1,4 @@
-<html lang="en"> 
+<!-- <html lang="en"> 
     <head>
         <meta name = "Author" content = "">
         <meta name = "Description" content = "It's website for login panel for user">
@@ -6,4 +6,112 @@
     <body>
         <h1>Strona jeszcze nie istnieje</h1> 
     </body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Olga Krupa">
+    <meta nama="description" content="This is side page of WUTFilmApp,
+    project creted for subject Programowanie Aplikacyjne on WUT">
+    <link rel="shortcut icon" href="favico.ico" type="image/x-icon">
+    <style>a { text-decoration: none; }</style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>WUTFilmApp</title>
+</head>
+
+<body>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    <div id = "mainHeader">
+        <h1> 
+            WUTFilmApp
+        </h1>
+    </div>
+   
+    
+    <div id="menuBar">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="baza_filmowa.html">Wyszukiwarka filmów</a></li>
+                <li><a href="premiery.html">Premiery</a></li>
+                <li><a href="news.html">Wiadomości</a></li>
+                <li><a href="login.html">Zaloguj się</a></li>
+            </ul>
+    </div>
+    
+    
+    <div class="textSurface" >
+        <div class="clr">
+        
+        </div>
+        
+        <div class="conteiner">
+            <h2 style = "font-size:27px";>
+                Powiedz nam czego szukasz
+                <input id="searchbar" onkeyup="funkcja()" type="text"
+            name="search" placeholder="Wpisz tytuł filmu lub gatunek..."> 
+            </h2>
+
+            <h2 class="container"><strong style="color:rgb(134, 17, 138);">WUTFilmApp!</strong></h2>
+            <p style="color:rgb(86, 23, 105);font-size:18px;font-weight: bold;"> Podziel się z nami jaki filmy cię interesują.</p>
+            <p>   Wyszukuj, oceniaj, wybieraj swoje preferencje. Pozwól by <strong style="color:rgb(134, 17, 138);">WUTFilmApp</strong> znalazło idealny film dla Ciebie.
+            </p>
+                <h2>Propozycję dla Ciebie</h2>
+            <div class = "main_box ">
+                <div class = "movie_box">
+                    <div class = "cover ">
+                        <img src="./photo/marvel.jpg" style="width: 90%; height: 90%;"  alt="Marvel End Game">
+                        <p id= "styl2">Avengers: End Game</p>
+                    </div>
+                    <div class = "description ">
+                        <div class = "description_header">
+                            <h3>Avengers: End Game</h3>
+                            <p>Premiera: 25 kwietnia 2019</p>
+                        </div>
+                        <div class = "description_body">
+                            <h3>Opis filmu</h3>
+                            <p id= "styl1"> Po wymazaniu połowy życia we Wszechświecie przez Thanosa Avengersi starają się zrobić wszystko, co konieczne, aby pokonać szalonego tytana. </p>
+                        </div>
+                        <div class = "description_bottom">
+                            <h3>Kategorie</h3>
+                            <p>Akcja / Sci-Fi</p>
+                        </div>
+                    </div>
+                    <br class = "clear">
+                </div>
+
+                <div class = "movie_box">
+                    <div class = "cover ">
+                        <img src="./photo/milczenie_owiec.jpg" style="width: 90%; height: 90%;"  alt="Marvel End Game">
+                        <p id= "styl2">Milczenie owiec</p>
+                    </div>
+                    <div class = "description ">
+                        <div class = "description_header">
+                            <h3>Milczenie owiec</h3>
+                            <p>Premiera: 30 stycznia 1991 </p>
+                        </div>
+                        <div class = "description_body">
+                            <h3>Opis filmu</h3>
+                            <p id= "styl1"> Seryjny morderca i inteligentna agentka łączą siły, by znaleźć przestępcę obdzierającego ze skóry swoje ofiary. </p>
+                        </div>
+                        <div class = "description_bottom">
+                            <h3>Kategorie</h3>
+                            <p>Thriller</p>
+                        </div>
+                    </div>
+                    <br class = "clear">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id = "mainFooter">
+        <p><cite>WUTFilmApp</cite> created by Łukasz Popek Kinga Kwoka & Olga Krupa</p>
+    </div>
+</body>
+
 </html>

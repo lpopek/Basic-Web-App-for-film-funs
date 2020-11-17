@@ -7,8 +7,9 @@
 /* Add a black background color to the top navigation */
 body {
     width: 85%;
-    margin: 10px auto 30px auto;
+    margin: 100px auto 30px auto;
     background-image: url("./photo/main_background.jpg");
+    background-position: center;
     padding: 0 0 auto 0;
     border: 5px solid rgb(22, 1, 1);
 }
@@ -31,6 +32,19 @@ p{
   margin-right: 5px;
   text-align: justify
 }
+
+
+p#styl1 {
+  color: rgb(100, 32, 117); 
+  text-indent: 2em;
+}
+
+p#styl2 {
+  color: rgb(100, 32, 117); 
+  text-indent: 2em;
+  text-align: center;
+}
+
 
 .clear{
   clear: both;
@@ -60,6 +74,7 @@ p{
 #menuBar ul {
   color:white;
   width: 100%;
+  border-bottom: 2px black solid;
   background-color: rgb(80, 7, 93);
   float: right;
   list-style: none;
@@ -67,17 +82,21 @@ p{
   padding: 10px;
   box-sizing: border-box;
  }
+
   
  #menuBar li {
   color: black;
   background-color: purple;
+  border: 3px black solid;
+ 
   font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
   text-decoration: none;
+  margin-right: 5px;
+  margin-bottom: 5px;
   float: left;
   font-size: 15px;
   padding: 10px 12px;
-  border: solid, 3px, black;
-  display: inline-block;
  }
  #menuBar a{
    color : unset;
@@ -88,11 +107,12 @@ p{
  #mainFooter {
   background: rgb(80, 7, 93);
   color: white;
+  border-top: 2px black solid;
   padding-left: 0px;
   padding-top: 10px;
   padding-bottom: 10px;
-  border-top: 20px, solid, black;
   font-size: 7px;
+  overflow: hidden;
  }
  #mainFooter p{
    text-align: center;
@@ -110,3 +130,67 @@ p{
    font-family: 'Comic Sans', 'Gill Sans Mt', sans-serif;
    line-height: 1em;
  }
+ #searchbar{ 
+  margin-left: 5%; 
+  padding:10px; 
+  border-radius: 10px; 
+} 
+
+input[type=text] { 
+   width: 30%; 
+   -webkit-transition: width 0.15s ease-in-out; 
+   transition: width 0.15s ease-in-out; 
+} 
+
+/* When the input field gets focus, 
+     change its width to 100% */
+input[type=text]:focus { 
+  width: 40%; 
+} 
+
+.main_box {
+  margin-top: 15px;
+}
+.movie_box {
+  border-style: solid;
+  margin-bottom: 20px;
+  background: #fff;
+  padding: 8px;
+  height: 270;
+}
+
+.movie_box div.cover {
+  float: left;
+  background-color: rgb(180, 116, 180);
+  width: 27%;
+  height: 270;
+  text-align: center;
+}
+
+.movie_box div.description  {
+  float: right;
+  background-color: rgb(143, 59, 143);
+  width: 73%;
+  height: 270;
+}
+.movie_box div.description_header {
+  color: rgb(17, 1, 1);
+  background-color: purple;
+  height: 25%;
+  text-align: center;
+  padding-left: 6px;
+}
+.movie_box div.description_body {
+  overflow: hidden;
+  height: 60%;
+  border-left: 1px solid #e5e5e5;
+  border-right: 1px solid #e5e5e5;
+  text-align: center;
+  background: #fff;
+}
+
+.movie_box div.description_bottom {
+  border: 1px solid #d7d7d7;
+  height: 15%;
+}
+
