@@ -318,6 +318,22 @@ p#styl2 {
   height: 15%;
 }
 
+#postReistrationPageBody {
+  margin-top: 30%;
+  background-color: white;
+  height: 200px;
+  border: 0rem solid transparent;
+}
+
+#postReistrationPageBody h1{
+  padding-top: 30px;
+  padding-bottom: 30px;
+  text-align: center;
+  background-color: white;
+  box-sizing: border-box;
+  border: 5px solid black;
+}
+
 @media(max-width: 760px){
   #hiddenMenu
 
