@@ -1,19 +1,27 @@
 body {
     background-color: aliceblue;
     box-sizing: content-box;
-    width: 100%;
-    margin: 0;
+    width: 85%;
+    margin: 70px auto 30px auto;
+    border: 0;
 }
-
+#mainHeader h1 {
+    margin: 5 auto;
+}
+header {
+    border: 5px solid rgb(22, 1, 1);
+}
 #title {
     font-family: 'News Cycle', serif;
-    font-size: 2rem;
+    font-size: 1.7rem;
     color: black;
     text-align: center;
-        
+    background-color:  #d7d7d7; 
+    border: 5px solid rgb(22, 1, 1);
+    border-top: 0; 
 }
-.container {
-    background-color: white;
+#title h1 {
+    margin-bottom: 1rem;
 }
 
 #refresh-btn {
@@ -27,9 +35,11 @@ body {
     background-color:rgb(215, 201, 218);
     color: black;
     cursor: pointer;
+    display: flex;
     left: 50%;
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
+    
 }
 #refresh-btn:hover {
     background-color:rgb(80, 7, 93);
@@ -37,25 +47,38 @@ body {
 }
 #ref-icon {
     width:1rem;
-    vertical-align: middle;
+    position: absolute;
+    right: 0.4rem;
+    top: 0.3rem;
+
+}
+.container {
+    width: 100%;
+    margin:auto;
+    
 }
 #news-container {
-    position: absolute;
-    left: auto;
-    width: 70%;
-    max-width: 50rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 75%;
     text-align: center;
     box-sizing: border-box;
     border: 1px solid black;
     box-shadow: 2px 2px 3px grey;
     background-color: rgb(215, 201, 218);
-    margin: 3rem;
+    margin: 1rem auto;
 }
 .news-post {
-    background-color: white;
+    background-color: #d7d7d7;
+    max-height: 30rem;
+    justify-content: center;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid black;
 }
+
 .news-title {
-    background-color: white;
+    background-color: rgb(215, 201, 218);;
     font-family: 'News Cycle', serif;
     font-size: 1.7rem;
     color:rgb(190, 46, 70);
@@ -77,7 +100,9 @@ body {
     font-weight: bolder;
 }
 #miniature {
-    width: 90%;
+    width: auto;
+    max-width: 75%;
+    max-height: 20rem;
 
 }
 
@@ -117,14 +142,16 @@ body {
 #mainFooter {
     background: rgb(80, 7, 93);
     color: white;
-    padding-left: 0px;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
     padding-top: 0.1rem;
     padding-bottom: 0.1rem;
     font-size: 0.5rem;
-    position: fixed;
-    bottom:0;
-    width: 100%;
-   }
-#mainFooter p{
     text-align: center;
+   }
+footer p{
+    margin: 0;
 }
+
