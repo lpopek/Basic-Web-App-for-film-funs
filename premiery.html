@@ -1,15 +1,3 @@
-<!-- <html lang="en"> 
-    <head>
-        <meta name = "Author" content = "">
-        <meta name = "Description" content = "It's website for login panel for user">
-    </head>
-    <body>
-        <h1>Strona jeszcze nie istnieje</h1> 
-    </body>
-</html> -->
-
-
-<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -20,29 +8,45 @@
     <link rel="shortcut icon" href="favico.ico" type="image/x-icon">
     <style>a { text-decoration: none; }</style>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="movie.css">
     <title>WUTFilmApp</title>
 </head>
 
 <body>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    
-    <div id = "mainHeader">
-        <h1> 
-            WUTFilmApp
-        </h1>
-    </div>
    
     
-    <div id="menuBar">
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="baza_filmowa.html">Wyszukiwarka filmów</a></li>
-                <li><a href="premiery.html">Premiery</a></li>
-                <li><a href="news.html">Wiadomości</a></li>
-                <li><a href="login.html">Zaloguj się</a></li>
-            </ul>
-    </div>
+    <header>
+        <div id = "mainHeader">
+            <h1> 
+                WUTFilmApp
+            </h1>
+        </div>
+        <nav>
+            <div class = "menuConteiner">
+                <div id = "hiddenMenu">
+                    <h2>MENU
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="baza_filmowa.html">Wyszukiwarka filmów</a></li>
+                        <li><a href="premiery.html">Premiery</a></li>
+                        <li><a href="news.html">Wiadomości</a></li>
+                        <li><a href="login.html">Zaloguj się</a></li>
+                    </ul>
+                </h2>
+                </div>
+                <div id="menuBar">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="baza_filmowa.html">Wyszukiwarka filmów</a></li>
+                        <li><a href="premiery.html">Premiery</a></li>
+                        <li><a href="news.html">Wiadomości</a></li>
+                        <li><a href="login.html">Zaloguj się</a></li>
+                    </ul>
+            </div>
+            </div>
+        </nav>
+    </header>
     
     
     <div class="textSurface" >
@@ -51,72 +55,22 @@
         </div>
         
         <div class="conteiner">
-            <h3 >
-                Wpisz poszukiwany film
-                <input id="searchbar" onkeyup="funkcja()" type="text"
-            name="search" placeholder="Wpisz tytuł filmu..."> 
-            </h3>
 
             <h2 class="container">Co warto obejrzeć?</h2>
             <p id= "styl1">Bądź na bierząco dzięki aplikacji <strong style="color:rgb(134, 17, 138);">WUTFilmApp!</strong><br></p>
             <p>Sprwadź co cię czeka w najbliższych tygodniach i na co warto wybrać się do kina. Zaplanuj sobie chwilę relaksu dzięki aplikacji WUTFilmApp.
             </p>
                 <h2>Nadchodzące premiery</h2>
-            <div class = "main_box ">
-                <div class = "movie_box">
-                    
-                    <div class = "cover ">
-                        <img src="./photo/marvel.jpg" style="width: 90%; height: 90%;"  alt="Marvel End Game">
-                        <p id= "styl2">Avengers: End Game</p>
-                    </div>
-                    <div class = "description ">
-                        <div class = "description_header">
-                            <h3>Avengers: End Game</h3>
-                            <p>Premiera: 25 kwietnia 2019</p>
-                        </div>
-                        <div class = "description_body">
-                            <h3>Opis filmu</h3>
-                            <p id= "styl1"> Po wymazaniu połowy życia we Wszechświecie przez Thanosa Avengersi starają się zrobić wszystko, co konieczne, aby pokonać szalonego tytana. </p>
-                        </div>
-                        <div class = "description_bottom">
-                            <h3>Kategorie</h3>
-                            <p>Akcja / Sci-Fi</p>
-                        </div>
-                    </div>
-                    
-                    <br class = "clear">
-                </div>
-                <div class = "movie_box">
-                    
-                    <div class = "cover ">
-                        <img src="./photo/parasite.jpg" style="width: 90%; height: 90%;"  alt="Marvel End Game">
-                        <p id= "styl2">PARASITE</p>
-                    </div>
-                    <div class = "description ">
-                        <div class = "description_header">
-                            <h3>PARASITE</h3>
-                            <p>Premiera: 21 maja 2019
-                            </p>
-                        </div>
-                        <div class = "description_body">
-                            <h3>Opis filmu</h3>
-                            <p id= "styl1"> Kiedy Ki-woo dostaje pracę jako korepetytor córki zamożnego małżeństwa,
-                                 wymyśla sposób na zapewnienie zatrudnienia również reszcie swojej rodziny.</p>
-                        </div>
-                        <div class = "description_bottom">
-                            <h3>Kategorie</h3>
-                            <p>Dramat</p>
-                        </div>
-                    </div>
-                    
-                    <br class = "clear">
-                </div>
+            <div id="movie-container-premiere"></div>
             </div>
         </div>
     </div>
     <div id = "mainFooter">
         <p><cite>WUTFilmApp</cite> created by Łukasz Popek Kinga Kwoka & Olga Krupa</p>
     </div>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="premiers.js"></script>
 </body>
 
 </html>

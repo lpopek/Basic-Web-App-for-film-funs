@@ -18,3 +18,13 @@ W późniejszym etapie rozważamy wprowadzenie dodatkowych funkcji:
 Technologie:
 Java 
 HTML5 + CSS3 + Javascript
+
+
+Etap2:
+
+Wyszukiwanie filmów
+- Dodano wyświetlanie filmów wybranego gatunku. Dane są pobierane z The Movie Database (TMDb) API.
+
+Premiery
+- Wyświetlanie premier wraz z najważniejszymi informacjami: Plakat, tytuł, data premiery, opis filmu oraz gatunki. 
+Dane są pobierane z The Movie Database (TMDb) API.

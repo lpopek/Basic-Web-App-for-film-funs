@@ -12,43 +12,57 @@
     <body>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         
-        <div id = "mainHeader">
-            <h1> 
-                WUTFilmApp
-            </h1>
-        </div>
-       
-        
-        <div id="menuBar">
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="baza_filmowa.html">Wyszukiwarka filmów</a></li>
-                    <li><a href="premiery.html">Premiery</a></li>
-                    <li><a href="news.html">Wiadomości</a></li>
-                    <li><a href="login.html">Zaloguj się</a></li>
-                </ul>
-        </div>
+        <header>
+            <div id = "mainHeader">
+                <h1> 
+                    WUTFilmApp
+                </h1>
+            </div>
+            <nav>
+                <div class = "menuConteiner">
+                    <div id = "hiddenMenu">
+                        <h2>MENU
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="baza_filmowa.html">Wyszukiwarka filmów</a></li>
+                            <li><a href="premiery.html">Premiery</a></li>
+                            <li><a href="news.html">Wiadomości</a></li>
+                            <li><a href="login.html">Zaloguj się</a></li>
+                        </ul>
+                    </h2>
+                    </div>
+                    <div id="menuBar">
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="baza_filmowa.html">Wyszukiwarka filmów</a></li>
+                            <li><a href="premiery.html">Premiery</a></li>
+                            <li><a href="news.html">Wiadomości</a></li>
+                            <li><a href="login.html">Zaloguj się</a></li>
+                        </ul>
+                </div>
+                </div>
+            </nav>
+        </header>
         
         <div class="textSurface">
-            <div class="formsStyle" >
-                <!-- Forms -->
+            <form id="formsStyle" >
                 <div>
                     <label>Imię</label>
-                    <input type="text" name="name" placeholder="imię">
+                    <input id="txtName" type="text" name="name" placeholder="imię">
                 </div>
             
                 <div>
                     <label>Nazwisko</label>
-                    <input type="text" name="surname" placeholder="nazwisko">
+                    <input id="txtSurname" type="text" name="surname" placeholder="nazwisko">
                 </div>
     
                 <div>
                     <label>Email</label>
-                    <input type="email" name="email" placeholder="np. jan.kowal@gmail.pl">
+                    <input id="txtEmail" type="email" name="email" placeholder="np. jan.kowal@gmail.pl">
                 </div>            
                 <div>
                     <label>Płeć</label>
-                    <select name="geder">
+                    <select id="txtGender" name="gender">
                         <option value="male">Mężczyzna</option>
                         <option value="female">Kobieta</option>
                     </select>
@@ -56,15 +70,16 @@
             
                     <div>
                         <label>Wiek:</label>
-                        <input type="number" name="age" value="30">
+                        <input id="txtAge" type="number" name="age" value="30">
                     </div>
                 
                     <div>
-                        <label>Birthday:</label>
-                        <input type="date" name="data urodzenia">
+                        <label>Data urodznia:</label>
+                        <input id="txtBirthday" type="date" name="data urodzenia">
                     </div>
-                    <button>Zarejestruj się</button>
-                </form>
+                    <button type="button" onclick="saveToTxt()">Zarejestruj się </button>
+                    <button type="button" onclick="resetForm()" value="Reset"> Reset </button>
+            </form>
         </div>
         
 		

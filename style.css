@@ -7,11 +7,14 @@
 /* Add a black background color to the top navigation */
 body {
     width: 85%;
-    margin: 100px auto 30px auto;
-    background-image: url("./photo/main_background.jpg");
+    margin: 70px auto 30px auto;
+    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url("./photo/main_background.jpg");;
     background-position: center;
     padding: 0 0 auto 0;
     border: 5px solid rgb(22, 1, 1);
+    animation: appear;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
 }
 /* styyle for h1 heading*/
 h1{
@@ -51,17 +54,21 @@ p#styl2 {
 }
 #mainHeader{
   background-color: rgb(74, 46, 103);
-  color: white;
+  color:rgb(221, 221, 221);;
   padding: 10px 10px 10px 10px;
+  }
+@keyframes appear{
+  0% {opacity: 0;}
+  100% {opacity: 1;}
 }
-#maiHeader h1{
+#mainHeader h1{
   padding: 20px auto;
   margin: 50 auto;
 }
 /* style for block with text*/
 .textSurface{
   padding: 20px 20px 20px 20px;
-  background-color: rgb(255, 255, 255);
+  background-color: rgb(221, 221, 221);
   border-top: 0;
   margin-top: 0;
 }
@@ -69,6 +76,7 @@ p#styl2 {
   height: auto;
   padding: 10px auto;
   margin: auto;
+  display: inline;
 }
 
 #menuBar ul {
@@ -88,7 +96,6 @@ p#styl2 {
   color: black;
   background-color: purple;
   border: 3px black solid;
-
   font-family: Arial, Helvetica, sans-serif;
   font-weight: bold;
   text-decoration: none;
@@ -98,12 +105,64 @@ p#styl2 {
   font-size: 15px;
   padding: 10px 12px;
  }
+ #menuBar li:hover{
+  background-color:rgb(46, 18, 46);
+  color: #f56ed8;
+  transition-duration: 10em;
+ }
  #menuBar a{
    color : unset;
  }
- #menuBar a:hover {
-  color: #f56ed8;
+
+ #hiddenMenu{
+  height: auto;
+  padding: 10px auto;
+  margin: auto;
+  display: none;
+}
+
+#hiddenMenu ul {
+  color:white;
+  width: 100%;
+  border-bottom: 2px black solid;
+  background-color: rgb(59, 122, 86);
+  float: right;
+  list-style: none;
+  display: inline;
+  padding: 10px;
+  box-sizing: border-box;
  }
+
+
+ #hiddenMenu li {
+  color: black;
+  background-color: purple;
+  border: 3px black solid;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  text-decoration: none;
+  margin-right: 5px;
+  margin-bottom: 5px;
+  float: left;
+  font-size: 15px;
+  padding: 10px 12px;
+ }
+ #hiddenMenu li:hover{
+  background-color:rgb(46, 18, 46);
+  color: #f56ed8;
+  transition-duration: 10em;
+ }
+ #hiddenMenu a{
+   color : unset;
+ }
+
+ .menuConteiner{
+   padding-top: 10px;
+   padding-bottom: 20px;
+   background-color:  rgb(80, 7, 93);;
+   box-sizing: border-box;
+ }
+
  #mainFooter {
   background: rgb(80, 7, 93);
   color: white;
@@ -131,7 +190,7 @@ p#styl2 {
    line-height: 1em;
  }
 
- .formsStyle {
+ #formsStyle {
    font-size: 15;
    background-color: purple;
    padding: 60px;
@@ -144,38 +203,38 @@ p#styl2 {
    border: 2px black solid;
  }
 
- .formsStyle input[type="password"]{
+ #formsStyle input[type="password"]{
 	padding:8px;
 	width:30%;
 }
- .formsStyle input[type="text"]{
+ #formsStyle input[type="text"]{
 	padding:8px;
 	width:30%;
 }
-.formsStyle input[type="email"]{
+#formsStyle input[type="email"]{
 	padding:8px;
 	width:30%;
 }
-.formsStyle input[type="date"]{
+#formsStyle input[type="date"]{
 	padding:8px;
-	width:30%;
+	width:35%;
 }
-.formsStyle select{
+#formsStyle select{
 	padding:8px;
 	width: 34.1%;
 }
-.formsStyle input[type='number']{
+#formsStyle input[type='number']{
 	padding:8px;
 	width:30%;
 }
 
-.formsStyle a{
+#formsStyle a{
   color: #f56ed8;
 }
-.formsStyle a:hover{
+#formsStyle a:hover{
   color: white;
 }
-.formsStyle button{
+#formsStyle button{
   font-weight: bold;
   font-family: Arial, Helvetica, sans-serif;
   border: 1px black solid;
@@ -183,15 +242,15 @@ p#styl2 {
   padding: 5px;
   margin-top: 10px;
 }
-.formsStyle button:hover{
-  background-color: rgb(213, 188, 213);
+#formsStyle button:hover{
+  background-color: rgb(180, 62, 196);
 }
-.formsStyle label{
+#formsStyle label{
   padding-top: 15px;
   font-weight: bold;
 	display:block;
 }
-.formsStyle p{
+#formsStyle p{
   text-indent: 0;
   padding-top: 10px;
 }
@@ -201,7 +260,7 @@ p#styl2 {
   border-radius: 10px;
 }
 
-input[type=text] {
+.input[type=text] {
    width: 30%;
    -webkit-transition: width 0.15s ease-in-out;
    transition: width 0.15s ease-in-out;
@@ -209,7 +268,7 @@ input[type=text] {
 
 /* When the input field gets focus,
      change its width to 100% */
-input[type=text]:focus {
+.input[type=text]:focus {
   width: 40%;
 }
 
@@ -259,3 +318,85 @@ input[type=text]:focus {
   height: 15%;
 }
 
+#postReistrationPageBody {
+  margin-top: 30%;
+  background-color: white;
+  height: 200px;
+  border: 0rem solid transparent;
+}
+
+#postReistrationPageBody h1{
+  padding-top: 30px;
+  padding-bottom: 30px;
+  text-align: center;
+  background-color: white;
+  box-sizing: border-box;
+  border: 5px solid black;
+}
+
+@media(max-width: 760px){
+  #hiddenMenu
+
+  body {
+    margin-top: 30px;
+  }
+  header #menuBar{
+    display: none;
+    margin-top: 20px;
+  }
+  header nav #menuBar{
+  height: auto;
+  padding: 0px auto;
+  margin: auto;
+  }
+  header nav #hiddenMenu {
+    display: inline;
+    margin-top:20px;
+  }
+  header nav #hiddenMenu ul {
+    display: none;
+    visibility: hidden;
+    opacity: 0;
+    transition-duration: visibility 0.5s, opacity 0.5s, linear;
+    text-indent: 0px;
+    text-align: center;
+    color: black;
+    width: 100%;
+    background-color: rgb(80, 7, 93);
+    padding: 10px;
+  }
+  header nav #hiddenMenu h2{
+    transition-delay: 0s;
+    background-color: purple;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    text-align: center;
+    margin-left: 0px;
+    margin-right: 0px;
+    border: 3px black solid;
+  }
+  header nav #hiddenMenu h2:hover{
+    transition-duration: 0.5s;
+    background-color: rgb(80, 7, 93);
+    color: transparent;
+    display: center;
+    border: transparent;
+    margin: inherit;
+  }
+  header nav #hiddenMenu h2:hover > ul{
+    margin-top: -60px;
+    background-color: rgb(80, 7, 93);
+    color: #f56ed8;
+    display: list-item;
+    visibility: visible;
+    opacity: 1;
+  }
+  header nav #hiddenMenu li {
+    transition-duration: 0.5s;
+    display: list-item;
+    text-align: center;
+    float: none;
+   }
+   
+   
+}

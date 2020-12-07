@@ -1,15 +1,4 @@
-<!-- <html lang="en"> 
-    <head>
-        <meta name = "Author" content = "">
-        <meta name = "Description" content = "It's website for login panel for user">
-    </head>
-    <body>
-        <h1>Strona jeszcze nie istnieje</h1> 
-    </body>
-</html> -->
 
-
-<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -20,29 +9,44 @@
     <link rel="shortcut icon" href="favico.ico" type="image/x-icon">
     <style>a { text-decoration: none; }</style>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="movie.css">
     <title>WUTFilmApp</title>
 </head>
 
 <body>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     
-    <div id = "mainHeader">
-        <h1> 
-            WUTFilmApp
-        </h1>
-    </div>
-   
-    
-    <div id="menuBar">
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="baza_filmowa.html">Wyszukiwarka filmów</a></li>
-                <li><a href="premiery.html">Premiery</a></li>
-                <li><a href="news.html">Wiadomości</a></li>
-                <li><a href="login.html">Zaloguj się</a></li>
-            </ul>
-    </div>
+    <header>
+        <div id = "mainHeader">
+            <h1> 
+                WUTFilmApp
+            </h1>
+        </div>
+        <nav>
+            <div class = "menuConteiner">
+                <div id = "hiddenMenu">
+                    <h2>MENU
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="baza_filmowa.html">Wyszukiwarka filmów</a></li>
+                        <li><a href="premiery.html">Premiery</a></li>
+                        <li><a href="news.html">Wiadomości</a></li>
+                        <li><a href="login.html">Zaloguj się</a></li>
+                    </ul>
+                </h2>
+                </div>
+                <div id="menuBar">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="baza_filmowa.html">Wyszukiwarka filmów</a></li>
+                        <li><a href="premiery.html">Premiery</a></li>
+                        <li><a href="news.html">Wiadomości</a></li>
+                        <li><a href="login.html">Zaloguj się</a></li>
+                    </ul>
+            </div>
+            </div>
+        </nav>
+    </header>
     
     
     <div class="textSurface" >
@@ -53,65 +57,51 @@
         <div class="conteiner">
             <h2 style = "font-size:27px";>
                 Powiedz nam czego szukasz
-                <input id="searchbar" onkeyup="funkcja()" type="text"
-            name="search" placeholder="Wpisz tytuł filmu lub gatunek..."> 
             </h2>
-
+            <form role="search" id="form">
+                <input type="search" id="search-film" placeholder="Search..." aria-label="Search through site content">
+                <button>
+                  <svg viewBox="0 0 190.708 190.708"><path class="path" d="M190.707,180.101l-47.077-47.077c11.702-14.071,18.753-32.142,18.753-51.831C162.383,36.423,125.96,0,81.191,0   C36.422,0,0,36.423,0,81.193c0,44.767,36.422,81.187,81.191,81.187c19.689,0,37.76-7.049,51.832-18.75l47.078,47.078   L190.707,180.101z M81.191,147.38C44.693,147.38,15,117.688,15,81.193C15,44.694,44.693,15,81.191,15   c36.498,0,66.191,29.694,66.191,66.193C147.383,117.688,117.689,147.38,81.191,147.38z"></path></svg>
+                </button>
+            </form>
+              
             <h2 class="container"><strong style="color:rgb(134, 17, 138);">WUTFilmApp!</strong></h2>
             <p style="color:rgb(86, 23, 105);font-size:18px;font-weight: bold;"> Podziel się z nami jaki filmy cię interesują.</p>
             <p>   Wyszukuj, oceniaj, wybieraj swoje preferencje. Pozwól by <strong style="color:rgb(134, 17, 138);">WUTFilmApp</strong> znalazło idealny film dla Ciebie.
             </p>
+            
+            <button class="btn genre" id="action-btn" onclick="searchByGenre(28)">Action</button>
+            <button class="btn genre" id="adventure-btn" onclick="searchByGenre(12)">Adventure</button>
+            <button class="btn genre" id="animation-btn" onclick="searchByGenre(16)">Animation</button>
+            <button class="btn genre" id="comedy-btn" onclick="searchByGenre(35)">Comedy</button>
+            <button class="btn genre" id="crime-btn" onclick="searchByGenre(80)">Crime</button>
+            <button class="btn genre" id="documentary-btn" onclick="searchByGenre(99)">Documentary</button>
+            <button class="btn genre" id="drama-btn" onclick="searchByGenre(18)">Drama</button>
+            <button class="btn genre" id="family-btn" onclick="searchByGenre(10751)">Family</button>
+            <button class="btn genre" id="fantasy-btn" onclick="searchByGenre(14)">Fantasy</button>
+            <button class="btn genre" id="history-btn" onclick="searchByGenre(36)">History</button>
+            <button class="btn genre" id="horror-btn" onclick="searchByGenre(27)">Horror</button>
+            <button class="btn genre" id="music-btn" onclick="searchByGenre(10402)">Music</button>
+            <button class="btn genre" id="mystery-btn" onclick="searchByGenre(9648)">Mystery</button>
+            <button class="btn genre" id="romance-btn" onclick="searchByGenre(10749)">Romance</button>
+            <button class="btn genre" id="sci-fi-btn" onclick="searchByGenre(878)">Sci-Fi</button>
+            <button class="btn genre" id="short-film-btn" onclick="searchByGenre(10770)">TV Movie</button>
+            <button class="btn genre" id="thriller-btn" onclick="searchByGenre(53)">Thriller</button>
+            <button class="btn genre" id="war-btn" onclick="searchByGenre(10752)">War</button>
+            <button class="btn genre" id="western-btn" onclick="searchByGenre(37)">Western</button>
+            
                 <h2>Propozycję dla Ciebie</h2>
-            <div class = "main_box ">
-                <div class = "movie_box">
-                    <div class = "cover ">
-                        <img src="./photo/marvel.jpg" style="width: 90%; height: 90%;"  alt="Marvel End Game">
-                        <p id= "styl2">Avengers: End Game</p>
-                    </div>
-                    <div class = "description ">
-                        <div class = "description_header">
-                            <h3>Avengers: End Game</h3>
-                            <p>Premiera: 25 kwietnia 2019</p>
-                        </div>
-                        <div class = "description_body">
-                            <h3>Opis filmu</h3>
-                            <p id= "styl1"> Po wymazaniu połowy życia we Wszechświecie przez Thanosa Avengersi starają się zrobić wszystko, co konieczne, aby pokonać szalonego tytana. </p>
-                        </div>
-                        <div class = "description_bottom">
-                            <h3>Kategorie</h3>
-                            <p>Akcja / Sci-Fi</p>
-                        </div>
-                    </div>
-                    <br class = "clear">
-                </div>
-
-                <div class = "movie_box">
-                    <div class = "cover ">
-                        <img src="./photo/milczenie_owiec.jpg" style="width: 90%; height: 90%;"  alt="Marvel End Game">
-                        <p id= "styl2">Milczenie owiec</p>
-                    </div>
-                    <div class = "description ">
-                        <div class = "description_header">
-                            <h3>Milczenie owiec</h3>
-                            <p>Premiera: 30 stycznia 1991 </p>
-                        </div>
-                        <div class = "description_body">
-                            <h3>Opis filmu</h3>
-                            <p id= "styl1"> Seryjny morderca i inteligentna agentka łączą siły, by znaleźć przestępcę obdzierającego ze skóry swoje ofiary. </p>
-                        </div>
-                        <div class = "description_bottom">
-                            <h3>Kategorie</h3>
-                            <p>Thriller</p>
-                        </div>
-                    </div>
-                    <br class = "clear">
-                </div>
-            </div>
+            <div id="movie-ctr"></div>
+            
         </div>
     </div>
     <div id = "mainFooter">
         <p><cite>WUTFilmApp</cite> created by Łukasz Popek Kinga Kwoka & Olga Krupa</p>
     </div>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="search_movie.js"></script>
+    <script src="search_genre.js"></script>
+    <script src="suggestions.js"></script>
 </body>
 
 </html>

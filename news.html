@@ -2,29 +2,65 @@
     <head>
         <meta name = "Author" content = "Kinga Kwoka">
         <meta name = "Description" content = "A news feed with random posts">
+        <link rel="stylesheet" href="style.css">
         <link rel="stylesheet" href="news.css">
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=News+Cycle&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Nerko+One&display=swap" rel="stylesheet">
     </head>
     <body>
+        <header>
+            <div id = "mainHeader">
+                <h1> 
+                    WUTFilmApp
+                </h1>
+            </div>
+            <nav>
+                <div class = "menuConteiner">
+                    <div id = "hiddenMenu">
+                        <h2>MENU
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="baza_filmowa.html">Wyszukiwarka filmów</a></li>
+                            <li><a href="premiery.html">Premiery</a></li>
+                            <li><a href="news.html">Wiadomości</a></li>
+                            <li><a href="login.html">Zaloguj się</a></li>
+                        </ul>
+                    </h2>
+                    </div>
+                    <div id="menuBar">
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="baza_filmowa.html">Wyszukiwarka filmów</a></li>
+                            <li><a href="premiery.html">Premiery</a></li>
+                            <li><a href="news.html">Wiadomości</a></li>
+                            <li><a href="login.html">Zaloguj się</a></li>
+                        </ul>
+                </div>
+                </div>
+            </nav>
+        </header>
+
+
         <div class="container">
-            <div id="title"><h1>Wiadomości</h1></div> 
+            <div id="title"><h1>Wiadomości</h1>
                 <button id="refresh-btn">Odśwież
                     <img src="https://simpleicon.com/wp-content/uploads/refresh.svg" id="ref-icon">
                 </button>
+            </div> 
             <div id="news-container"></div>
-            <div id="reference-cluster">
+            <!-- <div id="reference-cluster">
                 <div id="lookupwidget"></div>
                 <div class="reference-btn" id="main-page"><a class="link" href="index.html">Home</a></div>
                 <div class="reference-btn" id="lookup"><a class="link" href="baza_filmowa.html">Wyszukiwarka</a></div>
                 <div class="reference-btn" id="premieres"><a class="link" href="premiery.html">Premiery</a></div>
                 <div class="reference-btn" id="login"><a class="link" href="login.html">Zaloguj się</a></div>
-            </div>
-        </div>
-        <div id = "mainFooter">
-            <p><cite>WUTFilmApp</cite> created by Łukasz Popek Kinga Kwoka & Olga Krupa</p>
+            </div> -->
         </div>
         <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
         <script src="news.js"></script>
     </body>
+    <footer>
+        <p id="mainFooter"><cite>WUTFilmApp</cite> created by Łukasz Popek Kinga Kwoka & Olga Krupa</p>
+    </footer>
 </html>
