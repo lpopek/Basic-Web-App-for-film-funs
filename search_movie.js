@@ -11,11 +11,11 @@ const optionsG = {
 };
 
 function getSearch(searchVal){
-    const options = {
+    const optionsM = {
         method: 'GET',
         url: `https://api.themoviedb.org/3/search/movie?api_key=b9e8ab5199d674481be8e14eb992dc6a&query=${searchVal}`,
         };
-    return axios.request(options).then(response => response.data.results)
+    return axios.request(optionsM).then(response => response.data.results)
 }
 
 function getGenres(){
@@ -71,8 +71,8 @@ async function loadSearch(event) {
 
     var search = getSearchMovie(input.value);
 
-    var promise = getSearch(search);
-    await promise.then(function(result) {
+    var promiseM = getSearch(search);
+    await promiseM.then(function(result) {
         movies = [...result];
     })
 
@@ -117,7 +117,16 @@ function createMovie(movie, genresInMovie) {
         </div>
         <div class = "description ">
             <div class = "description_header">
-                <h3>${movie.title}</h3>
+                <h3>${movie.title}
+                <button class="dislike">
+                    <i class="fa fa-thumbs-o-down" aria-hidden="true"></i>
+                </button>
+                
+                <button class="like" style=”float: right”>
+                    <i onclick="myFunction(this)" class="fa fa-thumbs-o-up" aria-hidden="true"></i>
+                </button>
+                </h3>
+
                 <p>Premiere: ${movie.release_date}</p>
             </div>
             <div class = "description_body">
