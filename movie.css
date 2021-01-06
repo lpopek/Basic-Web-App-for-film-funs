@@ -55,9 +55,12 @@
     color: white;
     padding: 10px 10px 10px 10px;
   }
-  #maiHeader h1{
+  #mainHeader h1{
     padding: 20px auto;
-    margin: 50 auto;
+    /*margin: 50 auto; */
+    font-family: 'Bungee Shade', cursive;
+    text-shadow: 2px 2px black;
+    
   }
   /* style for block with text*/
   .textSurface{
