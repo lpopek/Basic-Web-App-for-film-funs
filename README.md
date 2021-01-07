@@ -35,7 +35,7 @@ Etap3:
 Wyszukiwanie filmów przez tytuł
 - Dodano wyświetlanie wyszukiwanych filmów. Dane są pobierane z The Movie Database (TMDb) API.
 
-Przyciski ocenionych
+Przyciski do oceny filmu
 - Dodano przyciski like/dislike do oceny filmu. 
 
 Plany na Etap 4: Ocena filmów oraz wpisywanie ich do bazy użytkownika.
