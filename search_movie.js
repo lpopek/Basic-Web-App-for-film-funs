@@ -1,26 +1,6 @@
-const f = document.getElementById('form');
-const input = document.getElementById('search-film');
 
 const movieContainerSearch = document.getElementById('movie-ctr');
 
-
-
-const optionsG = {
-    method: 'GET',
-    url: 'https://api.themoviedb.org/3/genre/movie/list?api_key=b9e8ab5199d674481be8e14eb992dc6a&language=en-US',
-};
-
-function getSearch(searchVal){
-    const optionsM = {
-        method: 'GET',
-        url: `https://api.themoviedb.org/3/search/movie?api_key=b9e8ab5199d674481be8e14eb992dc6a&query=${searchVal}`,
-        };
-    return axios.request(optionsM).then(response => response.data.results)
-}
-
-function getGenres(){
-    return axios.request(optionsG).then(response => response.data.genres)
-}
 
 function getSearchMovie(search){
     valueSearch = String();
@@ -35,6 +15,7 @@ function getSearchMovie(search){
 
     return valueSearch;
 }
+
 
 function getGenresInMovie(movie, genres){
     movieGenres = String();
@@ -61,46 +42,58 @@ function clearDiv(){
       }
 }
 
-async function loadSearch(event) {
+async function loadSearch(searchInput) {
     movies = Array();
     genres = Array();
-    const inputValue = input.value;
+    clearDiv();
+    const inputValue = searchInput;
     if (inputValue == ''){
         return
     }
+    
+    var search = getSearchMovie(inputValue.value);
 
-    var search = getSearchMovie(input.value);
 
-    var promiseM = getSearch(search);
-    await promiseM.then(function(result) {
-        movies = [...result];
-    })
+    $.ajax({                    
+        url: `https://api.themoviedb.org/3/search/movie?api_key=b9e8ab5199d674481be8e14eb992dc6a&query=${search}`,     
+        type: 'get',
+        async: false, 
+        success: function(data)         
+        {
+        movies = [...data.results];
+        } 
+    });
 
-    var promiseG = getGenres();
-    await promiseG.then(function(result) {
-        genres = [...result];
-    })
 
-    if (Array.isArray(movies) && movies.length) {
-        clearDiv();
+    $.ajax({                    
+        url: 'https://api.themoviedb.org/3/genre/movie/list?api_key=b9e8ab5199d674481be8e14eb992dc6a&language=en-US',     
+        type: 'get', 
+        async: false, 
+        success: function(data)         
+        {
+          genres = [...data.genres];
+        } 
+      });
 
-        movies.forEach(movie => {
-            genresInMovie = getGenresInMovie(movie, genres)
 
+    if(typeof movies !== 'undefined' && movies.length > 0){
+        movies.forEach(async movie => {
+            genresInMovie = getGenresInMovie(movie, genres);
+    
             createMovie(movie, genresInMovie);
-            
-        }
+            }
         );
     }
     else{
-        createInfo();
+        createInfo(searchInput);
     }
+
 }
-function createInfo(){
+function createInfo(searchInput){
     const movieDiv = document.createElement('div');
-    movieDiv.classList.add('movie_box');
+    movieDiv.classList.add('info_box');
     movieDiv.innerHTML = `
-    <h2>No result found for: ${input.value}</h2>
+    <h2>No result found for: ${searchInput.value}</h2>
     <p>Please try to enter something else </p>
         `
         ;
@@ -141,7 +134,13 @@ function createMovie(movie, genresInMovie) {
         </div>
         `
         ;
-        movieContainerSearch.appendChild(movieDiv);
+    movieContainerSearch.appendChild(movieDiv);
 }
 
-f.addEventListener('submit', loadSearch);
+
+async function searchFilm() {
+    	
+    // Get the data from each element on the form.
+    const searchValue = document.getElementById('searchF');
+    loadSearch(searchValue)
+  }
