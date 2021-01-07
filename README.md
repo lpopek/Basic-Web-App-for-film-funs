@@ -1,9 +1,8 @@
-OPIS PROJEKTU 
+# OPIS PROJEKTU 
 
 Projekt ma realizować aplikacje dla fanów filmów.
 
-
-Wymagania funkcjonalne:
+## Wymagania funkcjonalne:
 
 - wyszukiwanie informacji o filmach
 - wyszukiwanie informacji o preferencjach użytkownika (Podstawowe preferencje takie jak gatunek filmu, reżyser lub aktorzy.)
@@ -15,27 +14,19 @@ W późniejszym etapie rozważamy wprowadzenie dodatkowych funkcji:
 - odnośnik do trailerów
 
 
-Technologie:
+## Technologie:
 Java 
 HTML5 + CSS3 + Javascript
 
 
-Etap2:
+## Etap2:
 
-Wyszukiwanie filmów
+### Wyszukiwanie filmów
 - Dodano wyświetlanie filmów wybranego gatunku. Dane są pobierane z The Movie Database (TMDb) API.
 
-Premiery
+### Premiery
 - Wyświetlanie premier wraz z najważniejszymi informacjami: Plakat, tytuł, data premiery, opis filmu oraz gatunki. 
 Dane są pobierane z The Movie Database (TMDb) API.
 
-
-Etap3:
-
-Wyszukiwanie filmów przez tytuł
-- Dodano wyświetlanie wyszukiwanych filmów. Dane są pobierane z The Movie Database (TMDb) API.
-
-Przyciski do oceny filmu
-- Dodano przyciski like/dislike do oceny filmu. 
-
-Plany na Etap 4: Ocena filmów oraz wpisywanie ich do bazy użytkownika.
+### Wiadomości
+- Wyświetlanie wiadomości związanych z tematyką filmów. Dane pobierane są z Contextual Web Search API.
