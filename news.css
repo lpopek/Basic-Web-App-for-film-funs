@@ -7,13 +7,15 @@ body {
 }
 #mainHeader h1 {
     margin: 5 auto;
+    font-family: 'Bungee Shade', cursive;
+    text-shadow: 2px 2px black;
 }
 header {
     border: 5px solid rgb(22, 1, 1);
 }
 #title {
-    font-family: 'News Cycle', serif;
-    font-size: 1.7rem;
+    font-family: 'News Cycle', sans-serif;
+    font-size: 1rem;
     color: black;
     text-align: center;
     background-color:  #d7d7d7; 
@@ -22,6 +24,8 @@ header {
 }
 #title h1 {
     margin-bottom: 1rem;
+    text-shadow: 0.05rem 0.05rem #838282;
+    font-weight: lighter;
 }
 
 #refresh-btn {
@@ -39,11 +43,13 @@ header {
     left: 50%;
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
+    text-shadow: 0.05rem 0.05rem #fff9f9;
     
 }
 #refresh-btn:hover {
     background-color:rgb(80, 7, 93);
     color: #f8e6f4;
+    text-shadow: 0.05rem 0.05rem rgb(215, 201, 218);
 }
 #ref-icon {
     width:1rem;
@@ -100,6 +106,9 @@ header {
     font-weight: bolder;
 }
 #miniature {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
     width: auto;
     max-width: 75%;
     max-height: 20rem;
@@ -153,5 +162,6 @@ header {
    }
 footer p{
     margin: 0;
+    font-family: 'Montserrat', sans-serif;
 }
 

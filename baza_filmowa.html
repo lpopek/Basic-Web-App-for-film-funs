@@ -10,6 +10,8 @@
     <style>a { text-decoration: none; }</style>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="movie.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Bungee+Shade&display=swap" rel="stylesheet">
     <title>WUTFilmApp</title>
 </head>
 
@@ -58,13 +60,13 @@
             <h2 style = "font-size:27px";>
                 Powiedz nam czego szukasz
             </h2>
-            <form role="search" id="form">
-                <input type="search" id="search-film" placeholder="Search..." aria-label="Search through site content">
-                <button>
-                  <svg viewBox="0 0 190.708 190.708"><path class="path" d="M190.707,180.101l-47.077-47.077c11.702-14.071,18.753-32.142,18.753-51.831C162.383,36.423,125.96,0,81.191,0   C36.422,0,0,36.423,0,81.193c0,44.767,36.422,81.187,81.191,81.187c19.689,0,37.76-7.049,51.832-18.75l47.078,47.078   L190.707,180.101z M81.191,147.38C44.693,147.38,15,117.688,15,81.193C15,44.694,44.693,15,81.191,15   c36.498,0,66.191,29.694,66.191,66.193C147.383,117.688,117.689,147.38,81.191,147.38z"></path></svg>
+            <div class = "search">
+                <input id="searchF" type="text" name="name" placeholder="Search..." required>
+                <button class="btn genre" id="wyszukaj-btn" onclick="searchFilm()">
+                    <svg viewBox="0 0 190.708 190.708"><path class="path" d="M190.707,180.101l-47.077-47.077c11.702-14.071,18.753-32.142,18.753-51.831C162.383,36.423,125.96,0,81.191,0   C36.422,0,0,36.423,0,81.193c0,44.767,36.422,81.187,81.191,81.187c19.689,0,37.76-7.049,51.832-18.75l47.078,47.078   L190.707,180.101z M81.191,147.38C44.693,147.38,15,117.688,15,81.193C15,44.694,44.693,15,81.191,15   c36.498,0,66.191,29.694,66.191,66.193C147.383,117.688,117.689,147.38,81.191,147.38z"></path></svg>
                 </button>
-            </form>
-              
+            </div>
+
             <h2 class="container"><strong style="color:rgb(134, 17, 138);">WUTFilmApp!</strong></h2>
             <p style="color:rgb(86, 23, 105);font-size:18px;font-weight: bold;"> Podziel się z nami jaki filmy cię interesują.</p>
             <p>   Wyszukuj, oceniaj, wybieraj swoje preferencje. Pozwól by <strong style="color:rgb(134, 17, 138);">WUTFilmApp</strong> znalazło idealny film dla Ciebie.
@@ -99,6 +101,8 @@
         <p><cite>WUTFilmApp</cite> created by Łukasz Popek Kinga Kwoka & Olga Krupa</p>
     </div>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script src="search_movie.js"></script>
     <script src="search_genre.js"></script>
     <script src="suggestions.js"></script>

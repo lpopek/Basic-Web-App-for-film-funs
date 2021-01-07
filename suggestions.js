@@ -72,7 +72,15 @@ function createMovie(movie, genresInMovie) {
         </div>
         <div class = "description ">
             <div class = "description_header">
-                <h3>${movie.title}</h3>
+                <h3>${movie.title}
+                <button class="dislike">
+                    <i class="fa fa-thumbs-o-down" aria-hidden="true"></i>
+                </button>
+                
+                <button class="like" style=”float: right”>
+                    <i onclick="myFunction(this)" class="fa fa-thumbs-o-up" aria-hidden="true"></i>
+                </button>
+                </h3>
                 <p>Premiere: ${movie.release_date}</p>
             </div>
             <div class = "description_body">
