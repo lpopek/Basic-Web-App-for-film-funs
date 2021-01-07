@@ -28,3 +28,14 @@ Wyszukiwanie filmów
 Premiery
 - Wyświetlanie premier wraz z najważniejszymi informacjami: Plakat, tytuł, data premiery, opis filmu oraz gatunki. 
 Dane są pobierane z The Movie Database (TMDb) API.
+
+
+Etap3:
+
+Wyszukiwanie filmów przez tytuł
+- Dodano wyświetlanie wyszukiwanych filmów. Dane są pobierane z The Movie Database (TMDb) API.
+
+Przyciski ocenionych
+- Dodano przyciski like/dislike do oceny filmu. 
+
+Plany na Etap 4: Ocena filmów oraz wpisywanie ich do bazy użytkownika.
