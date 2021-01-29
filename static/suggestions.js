@@ -1,4 +1,5 @@
-const movieContainerPremiere = document.getElementById('movie-container-premiere');
+//Olga Krupa
+const movieContainerPremiere = document.getElementById('movie-ctr');
 
 const optionsPremiere = {
 method: 'GET',
@@ -20,6 +21,22 @@ function getGenres(){
     return axios.request(optionsGenre).then(response => response.data.genres)
 }
 
+function getSuggestions(movie){
+    movies_arr = Array();
+    $.ajax({
+        url: `https://api.themoviedb.org/3/movie/${movie}/recommendations?api_key=b9e8ab5199d674481be8e14eb992dc6a&language=en-US&page=1`,
+        type: 'get',
+        async: false,
+        success: function(data)
+        {
+        movies_arr = [...data.results];
+        }
+    });
+
+    var s_movies  = movies_arr.slice(0, 3);
+    return s_movies
+}
+
 function getGenresInMovie(movie, genres){
     movieGenres = String();
     var str = " ";
@@ -38,23 +55,58 @@ function getGenresInMovie(movie, genres){
     );
     return movieGenres
 }
-async function loadPremiers() {
+
+function clearDiv(){
+    while (movieContainer.firstChild) {
+        movieContainer.removeChild(movieContainer.firstChild);
+      }
+}
+
+async function loadSuggestions() {
     movies = Array();
     genres = Array();
-    var promise = getPremiers();
-    await promise.then(function(result) {
-        movies = [...result];
-    })
+    clearDiv();
+    fav_movies = Array();
 
-    var promiseG = getGenres();
+    $.ajax({
+			url: '/baza_filmowa/suggestions',
+			data: $('form').serialize(),
+			type: 'POST',
+			async: false,
+			success: function(response){
+				fav_movies = [...response.favmovies];
+			},
+			error: function(error){
+				console.log(error);
+			}
+		});
+
+	var promiseG = getGenres();
     await promiseG.then(function(result) {
         genres = [...result];
     })
 
-    movies.forEach(movie => {
+
+    if (typeof fav_movies !== 'undefined' && fav_movies.length > 0) {
+        fav_movies.forEach(async f_movie => {
+            var s_movies = getSuggestions(f_movie);
+            movies.unshift(...s_movies)
+
+    }
+    );
+    }
+    else {
+        var promise = getPremiers();
+        await promise.then(function(result) {
+            movies = [...result];
+        })
+    }
+
+    movies.forEach(async movie => {
         genresInMovie = getGenresInMovie(movie, genres)
 
         createMovie(movie, genresInMovie);
+
     }
     );
 }
@@ -62,10 +114,11 @@ async function loadPremiers() {
 function createMovie(movie, genresInMovie) {
     const movieDiv = document.createElement('div');
     movieDiv.classList.add('movie_box');
+    const url = new URL(movie.poster_path, 'http://image.tmdb.org/t/p/w185');
 
     const myUrl = `http://image.tmdb.org/t/p/w185${movie.poster_path}`;
     movieDiv.innerHTML = `
-        <div class = "cover "><img src="${myUrl}" style="width: 75%; height: 85%;"  alt="${movie.title}">
+        <div class = "cover "><img src="${myUrl}" style="width: 85%; height: 85%;"  alt="${movie.title}">
             <p id= "styl2">${movie.title}</p>
         </div>
         <div class = "description ">
@@ -76,10 +129,10 @@ function createMovie(movie, genresInMovie) {
                 </button>
                 
                 <button class="like" style=”float: right”>
-                    <i onclick="myFunction(this)" class="fa fa-thumbs-o-up" aria-hidden="true"></i>
-                </button></h3>
-                <p>Premiere: ${movie.release_date}
-                </p>
+                    <i onclick="addToFavourite(${movie.id})" class="fa fa-thumbs-o-up" aria-hidden="true"></i>
+                </button>
+                </h3>
+                <p>Premiere: ${movie.release_date}</p>
             </div>
             <div class = "description_body">
                 <h3>Movie description</h3>
@@ -93,6 +146,21 @@ function createMovie(movie, genresInMovie) {
         </div>
         `
         ;
-    movieContainerPremiere.appendChild(movieDiv);
+        movieContainerPremiere.appendChild(movieDiv);
 }
-window.onload = loadPremiers();
+
+async function addToFavourite(movie){
+    add_movie = movie
+
+	$.ajax({
+	  url : '/baza_filmowa/addtofav',
+      type : 'GET',
+      data : {data_movie: add_movie},
+      success: function(){
+        console.log(this.url);
+      }
+    });
+}
+
+
+window.onload = loadSuggestions();

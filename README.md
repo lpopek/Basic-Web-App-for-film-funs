@@ -30,3 +30,21 @@ Dane są pobierane z The Movie Database (TMDb) API.
 
 ### Wiadomości
 - Wyświetlanie wiadomości związanych z tematyką filmów. Dane pobierane są z Contextual Web Search API.
+
+## Etap3:
+
+### Wyszukiwanie filmów
+- Dodano wyszukiwanie filmów. Dane są pobierane z The Movie Database (TMDb) API.
+
+## Etap4:
+
+### Polecane filmy
+- Dodano polubienie filmów. 
+Użytkownik może polubić dany film, baza zbiera informację o filmie, oraz proponuję filmy na podstawie polubień.
+Gdy użytkownik nie jest zalogowany otrzymuję najbliższe premiery jako polecone filmy. Dane pobierane są z The Movie Database (TMDb) API.
+
+### Stworzenie bazy użytkowników
+- Utworzenine bazy danych użytkownikó w formacie tekstowym oraz bazę danych polubionych filmów danego użytkownika.
+
+### Stworzenie serwera
+- Stworzenie serwera oraz włączenie wszytskich widoków w strkukturę serwera. Serwer powstał przy użyciu technologii Flask. 

@@ -6,10 +6,10 @@
     <meta name="author" content="Olga Krupa">
     <meta nama="description" content="This is side page of WUTFilmApp,
     project creted for subject Programowanie Aplikacyjne on WUT">
-    <link rel="shortcut icon" href="favico.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='fivico.ico') }}" type="image/x-icon">
     <style>a { text-decoration: none; }</style>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="movie.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/movie.css') }}">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Bungee+Shade&display=swap" rel="stylesheet">
     <title>WUTFilmApp</title>
@@ -29,21 +29,21 @@
                 <div id = "hiddenMenu">
                     <h2>MENU
                     <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="baza_filmowa.html">Wyszukiwarka filmów</a></li>
-                        <li><a href="premiery.html">Premiery</a></li>
-                        <li><a href="news.html">Wiadomości</a></li>
-                        <li><a href="login.html">Zaloguj się</a></li>
+                        <li><a href="{{ url_for('index') }}">Home</a></li>
+                        <li><a href="{{ url_for('baza_filmowa') }}">Wyszukiwarka filmów</a></li>
+                        <li><a href="{{ url_for('premiery') }}">Premiery</a></li>
+                        <li><a href="{{ url_for('news') }}">Wiadomości</a></li>
+                        <li><a href="{{ url_for('login') }}">Zaloguj się</a></li>
                     </ul>
                 </h2>
                 </div>
                 <div id="menuBar">
                     <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="baza_filmowa.html">Wyszukiwarka filmów</a></li>
-                        <li><a href="premiery.html">Premiery</a></li>
-                        <li><a href="news.html">Wiadomości</a></li>
-                        <li><a href="login.html">Zaloguj się</a></li>
+                        <li><a href="{{ url_for('index') }}">Home</a></li>
+                        <li><a href="{{ url_for('baza_filmowa') }}">Wyszukiwarka filmów</a></li>
+                        <li><a href="{{ url_for('premiery') }}">Premiery</a></li>
+                        <li><a href="{{ url_for('news') }}">Wiadomości</a></li>
+                        <li><a href="{{ url_for('login') }}">Zaloguj się</a></li>
                     </ul>
             </div>
             </div>
@@ -91,6 +91,7 @@
             <button class="btn genre" id="thriller-btn" onclick="searchByGenre(53)">Thriller</button>
             <button class="btn genre" id="war-btn" onclick="searchByGenre(10752)">War</button>
             <button class="btn genre" id="western-btn" onclick="searchByGenre(37)">Western</button>
+            <button class="btn genre" id="recommended-btn" onclick="loadSuggestions()">Recommended</button>
             
                 <h2>Propozycję dla Ciebie</h2>
             <div id="movie-ctr"></div>
@@ -103,9 +104,9 @@
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-    <script src="search_movie.js"></script>
-    <script src="search_genre.js"></script>
-    <script src="suggestions.js"></script>
+    <script src="{{url_for('static', filename='search_movie.js')}}"></script>
+    <script src="{{url_for('static', filename='search_genre.js')}}"></script>
+    <script src="{{url_for('static', filename='suggestions.js')}}"></script>
 </body>
 
 </html>
