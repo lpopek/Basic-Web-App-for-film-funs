@@ -1,0 +1,24 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Olga Krupa">
+    <meta nama="description" content="This is main page of WUTFilmApp,
+    project creted for subject Programowanie Aplikacyjne on WUT">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='fivico.ico') }}" type="image/x-icon">
+    <style>a { text-decoration: none; }</style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- here we can include our CSS files -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>WUTFilmApp</title>
+</head>
+<body id = "postReistrationPageBody">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <h1>Zostałeś zalogowany. Za chwilę zostaniesz przekierowany
+        na stronę startową.
+    </h1>
+</body>
+<script type="text/javascript">
+    setTimeout("location.href='./';",4000);
+</script>
+
+</html>

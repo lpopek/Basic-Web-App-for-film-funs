@@ -1,3 +1,4 @@
+//Kinga Kwoka
 const newsContainer = document.getElementById('news-container');
 const loadButton = document.getElementById('refresh-btn');
 
@@ -44,10 +45,5 @@ function createPost(post) {
     return postElement;
 }
 
-// axios.request(options).then(function (response) {
-// 	console.log(response.data);
-// }).catch(function (error) {
-// 	console.error(error);
-// });
 
 loadButton.addEventListener("click", ()=>loadPosts());

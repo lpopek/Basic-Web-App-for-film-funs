@@ -5,9 +5,10 @@
         <meta charset="UTF-8">
         <meta name = "Author: Łukasz Popek" content = "LogIn page of WUTFilmApp">
         <meta name = "Description" content = "It's website for login panel for user">
+        <link rel="shortcut icon" href="{{ url_for('static', filename='fivico.ico') }}" type="image/x-icon">
         <style>a { text-decoration: none; }</style>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Bungee+Shade&display=swap" rel="stylesheet">
         <title>WUTFilmApp</title>
@@ -26,21 +27,21 @@
                     <div id = "hiddenMenu">
                         <h2>MENU
                         <ul>
-                            <li><a href="index.html">Home</a></li>
-                            <li><a href="baza_filmowa.html">Wyszukiwarka filmów</a></li>
-                            <li><a href="premiery.html">Premiery</a></li>
-                            <li><a href="news.html">Wiadomości</a></li>
-                            <li><a href="login.html">Zaloguj się</a></li>
+                            <li><a href="{{ url_for('index') }}">Home</a></li>
+                            <li><a href="{{ url_for('baza_filmowa') }}">Wyszukiwarka filmów</a></li>
+                            <li><a href="{{ url_for('premiery') }}">Premiery</a></li>
+                            <li><a href="{{ url_for('news') }}">Wiadomości</a></li>
+                            <li><a href="{{ url_for('login') }}">Zaloguj się</a></li>
                         </ul>
                     </h2>
                     </div>
                     <div id="menuBar">
                         <ul>
-                            <li><a href="index.html">Home</a></li>
-                            <li><a href="baza_filmowa.html">Wyszukiwarka filmów</a></li>
-                            <li><a href="premiery.html">Premiery</a></li>
-                            <li><a href="news.html">Wiadomości</a></li>
-                            <li><a href="login.html">Zaloguj się</a></li>
+                            <li><a href="{{ url_for('index') }}">Home</a></li>
+                            <li><a href="{{ url_for('baza_filmowa') }}">Wyszukiwarka filmów</a></li>
+                            <li><a href="{{ url_for('premiery') }}">Premiery</a></li>
+                            <li><a href="{{ url_for('news') }}">Wiadomości</a></li>
+                            <li><a href="{{ url_for('login') }}">Zaloguj się</a></li>
                         </ul>
                 </div>
                 </div>
@@ -52,15 +53,15 @@
             <form id="formsStyle">
                 <div>
                     <label>Login</label>
-                    <input type="text" name="login" placeholder="Wpisz login">
+                    <input id="logEmail" type="text" name="usrlogin" placeholder="Wpisz login (emaill)">
                 </div>
                 <div>
                     <label>Hasło</label>
-                    <input type="password" name="password" placeholder="Wpisz hasło">
+                    <input id="logPassword" type="password" name="usrpassword" placeholder="Wpisz hasło">
                 </div>
-                <button>Zaloguj się</button>
+                <button type="button" onclick="logInUser()">Zaloguj się </button>
                 <p>
-                    Nie masz konta? <a href="registration.html">Zarejestruj się!</a>
+                    Nie masz konta? <a href="{{ url_for('registration') }}">Zarejestruj się!</a>
                 </p>
             </form>
 		
@@ -69,7 +70,9 @@
             <p><cite>WUTFilmApp</cite> created by Łukasz Popek Kinga Kwoka & Olga Krupa</p>
         </div>
     </body>
-    <script src="script.js">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="{{url_for('static', filename='script.js')}}">
     </script>
     
 </html>

@@ -1,20 +1,24 @@
-const movieContainer = document.getElementById('movie-ctr');
+//Olga Krupa
+const movieContainerPremiere = document.getElementById('movie-container-premiere');
 
-const optionsGen = {
+const optionsPremiere = {
+method: 'GET',
+url: 'https://api.themoviedb.org/3/movie/upcoming?api_key=b9e8ab5199d674481be8e14eb992dc6a&language=en-US&page=1',
+};
+
+
+
+const optionsGenre = {
     method: 'GET',
     url: 'https://api.themoviedb.org/3/genre/movie/list?api_key=b9e8ab5199d674481be8e14eb992dc6a&language=en-US',
 };
 
-function getByGenre(genre){
-    const options = {
-        method: 'GET',
-        url: `https://api.themoviedb.org/3/discover/movie?api_key=b9e8ab5199d674481be8e14eb992dc6a&with_genres=${genre}`,
-        }; 
-    return axios.request(options).then(response => response.data.results)
+function getPremiers(){
+    return axios.request(optionsPremiere).then(response => response.data.results)
 }
 
 function getGenres(){
-    return axios.request(optionsGen).then(response => response.data.genres)
+    return axios.request(optionsGenre).then(response => response.data.genres)
 }
 
 function getGenresInMovie(movie, genres){
@@ -35,18 +39,10 @@ function getGenresInMovie(movie, genres){
     );
     return movieGenres
 }
-
-function clearDiv(){
-    while (movieContainer.firstChild) {
-        movieContainer.removeChild(movieContainer.firstChild);
-      }
-}
-
-async function searchByGenre(genre) {
+async function loadPremiers() {
     movies = Array();
     genres = Array();
-    clearDiv();
-    var promise = getByGenre(genre);
+    var promise = getPremiers();
     await promise.then(function(result) {
         movies = [...result];
     })
@@ -56,12 +52,10 @@ async function searchByGenre(genre) {
         genres = [...result];
     })
 
-
-    movies.forEach(async movie => {
+    movies.forEach(movie => {
         genresInMovie = getGenresInMovie(movie, genres)
 
         createMovie(movie, genresInMovie);
-        
     }
     );
 }
@@ -69,6 +63,7 @@ async function searchByGenre(genre) {
 function createMovie(movie, genresInMovie) {
     const movieDiv = document.createElement('div');
     movieDiv.classList.add('movie_box');
+
     const myUrl = `http://image.tmdb.org/t/p/w185${movie.poster_path}`;
     movieDiv.innerHTML = `
         <div class = "cover "><img src="${myUrl}" style="width: 75%; height: 85%;"  alt="${movie.title}">
@@ -83,9 +78,9 @@ function createMovie(movie, genresInMovie) {
                 
                 <button class="like" style=”float: right”>
                     <i onclick="myFunction(this)" class="fa fa-thumbs-o-up" aria-hidden="true"></i>
-                </button>
-                </h3>
-                <p>Premiere: ${movie.release_date}</p>
+                </button></h3>
+                <p>Premiere: ${movie.release_date}
+                </p>
             </div>
             <div class = "description_body">
                 <h3>Movie description</h3>
@@ -99,5 +94,6 @@ function createMovie(movie, genresInMovie) {
         </div>
         `
         ;
-    movieContainer.appendChild(movieDiv);
+    movieContainerPremiere.appendChild(movieDiv);
 }
+window.onload = loadPremiers();
