@@ -1,4 +1,4 @@
-
+//Olga Krupa
 const movieContainerSearch = document.getElementById('movie-ctr');
 
 
@@ -116,7 +116,7 @@ function createMovie(movie, genresInMovie) {
                 </button>
                 
                 <button class="like" style=”float: right”>
-                    <i onclick="myFunction(this)" class="fa fa-thumbs-o-up" aria-hidden="true"></i>
+                    <i onclick="addToFavourite(${movie.id})" class="fa fa-thumbs-o-up" aria-hidden="true"></i>
                 </button>
                 </h3>
 
@@ -137,6 +137,18 @@ function createMovie(movie, genresInMovie) {
     movieContainerSearch.appendChild(movieDiv);
 }
 
+async function addToFavourite(movie){
+    add_movie = movie
+
+	$.ajax({
+	  url : '/baza_filmowa/addtofav',
+      type : 'GET',
+      data : {data_movie: add_movie},
+      success: function(){
+        console.log(this.url);
+      }
+    });
+}
 
 async function searchFilm() {
     	

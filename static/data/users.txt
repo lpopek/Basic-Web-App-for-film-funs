@@ -1,0 +1,2 @@
+user@gmail.com|user_password|user_name|user_surname|male|30|2021-01-05
+user1@gmail.com|user1|user1_name|user1_surname|male|30|2021-01-14

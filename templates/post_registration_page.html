@@ -3,10 +3,11 @@
     <meta name="author" content="Łukasz Popek">
     <meta nama="description" content="This is main page of WUTFilmApp,
     project creted for subject Programowanie Aplikacyjne on WUT">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='fivico.ico') }}" type="image/x-icon">
     <style>a { text-decoration: none; }</style>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- here we can include our CSS files -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <title>WUTFilmApp</title>
 </head>
 <body id = "postReistrationPageBody">
@@ -17,7 +18,7 @@
     </h1>
 </body>
 <script type="text/javascript">
-    setTimeout("location.href='./index.html';",4000);
+    setTimeout("location.href='./';",4000);
 </script>
 
 </html>
