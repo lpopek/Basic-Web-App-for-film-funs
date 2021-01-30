@@ -48,3 +48,21 @@ Gdy użytkownik nie jest zalogowany otrzymuję najbliższe premiery jako polecon
 
 ### Stworzenie serwera
 - Stworzenie serwera oraz włączenie wszytskich widoków w strkukturę serwera. Serwer powstał przy użyciu technologii Flask. 
+
+### Wymagania
+
+Aplikacja została napisana w technologii flask dlatego musimy zainstalować flask
+```javascript
+pip install flask
+```
+
+### Uruchamianie aplikacji
+- W pierwszej kolejności należy ustawić punk startowy aplikacji
+```javascript
+set FLASK_APP=main.py
+```
+- Następnie możemy uruchomić serwer
+```javascript
+flask run
+```
+
