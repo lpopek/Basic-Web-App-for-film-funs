@@ -16,7 +16,7 @@ W późniejszym etapie rozważamy wprowadzenie dodatkowych funkcji:
 
 ## Technologie:
 Java 
-HTML5 + CSS3 + Javascript
+HTML5 + CSS3 + Javascript + Python - Flask
 
 
 ## Etap2:
