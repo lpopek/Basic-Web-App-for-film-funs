@@ -1,6 +1,9 @@
 # OPIS PROJEKTU 
 
-Projekt ma realizować aplikacje dla fanów filmów.
+Projekt ma realizować aplikacje dla fanów filmów. Projekt stowrzony przez 
+- Łukasz Popek
+- Olga Krupa 
+- Kinga Kwoka
 
 ## Wymagania funkcjonalne:
 
